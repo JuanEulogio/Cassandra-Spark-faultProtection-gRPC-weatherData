@@ -1,0 +1,40 @@
+syntax="proto3";
+
+service Station {
+        rpc StationSchema(EmptyRequest)            returns (StationSchemaReply)    {}
+        rpc StationName(StationInspectRequest)     returns (StationNameReply)      {}
+        rpc RecordTemps(RecordTempsRequest)        returns (RecordTempsReply)      {}
+        rpc StationMax(StationInspectRequest)      returns (StationMaxReply)       {}
+}
+
+message EmptyRequest {}
+
+message StationInspectRequest {
+        string station = 1; // Station ID
+} 
+
+message RecordTempsRequest {
+        string station = 1; // Station ID
+        string date = 2;
+        int32 tmin = 3;
+        int32 tmax = 4;
+}
+
+message RecordTempsReply {
+        string error = 1;
+}
+
+message StationSchemaReply {
+        string schema = 1;
+        string error = 2;
+}
+
+message StationNameReply {
+        string name = 1;
+        string error = 2;
+}
+
+message StationMaxReply {
+        int32 tmax = 1;
+        string error = 2;
+}

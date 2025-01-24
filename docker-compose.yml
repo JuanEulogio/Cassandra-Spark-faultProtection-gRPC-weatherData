@@ -1,0 +1,29 @@
+services:
+    p6-db-1:
+        image: p6-base
+        container_name: p6-db-1
+        hostname: p6-db-1
+        volumes:
+            - "./src:/src"
+        deploy:
+            resources:
+                limits:
+                    memory: 2.5G
+
+    p6-db-2:
+        image: p6-base
+        container_name: p6-db-2
+        hostname: p6-db-2
+        deploy:
+            resources:
+                limits:
+                    memory: 1G
+
+    p6-db-3:
+        image: p6-base
+        container_name: p6-db-3
+        hostname: p6-db-3
+        deploy:
+            resources:
+                limits:
+                    memory: 1G
