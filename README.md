@@ -1,4 +1,5 @@
 # Tech Stack
+- Python
 - Cassandra
 - gRPC
 - Spark
